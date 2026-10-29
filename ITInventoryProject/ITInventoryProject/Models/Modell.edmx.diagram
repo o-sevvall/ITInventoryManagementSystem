@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c3ab9d61eefa4775a4729bc6e19dac74" Name="Diagram1" ZoomLevel="41">
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Bilgisayar" Width="1.5" PointX="9.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.BilgisayarTuru" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Bolge" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Butce" Width="1.5" PointX="7.5" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Gorev" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Kullanicilar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Monitor" Width="1.5" PointX="15" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Mudurluk" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Personel" Width="1.5" PointX="7.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Seflik" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.Yazici" Width="1.5" PointX="12.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OGMDatabase1Model1.YaziciTuru" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Bilgisayar_BilgisayarTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Bilgisayar_Butce" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Bilgisayar_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Monitor_Bilgisayar" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Mudurluk_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Personel_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Monitor_Butce" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Yazici_Butce" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Personel_Gorev" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Monitor_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Personel_Mudurluk" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Seflik_Mudurluk" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Personel_Seflik" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Yazici_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="OGMDatabase1Model1.FK_Yazici_YaziciTuru" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

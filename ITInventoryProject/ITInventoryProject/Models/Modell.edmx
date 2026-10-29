@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="OGMDatabase1Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bilgisayar">
+          <Key>
+            <PropertyRef Name="BilgisayarID" />
+          </Key>
+          <Property Name="BilgisayarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelID" Type="int" />
+          <Property Name="BilgisayarTurID" Type="int" />
+          <Property Name="ButceID" Type="int" />
+          <Property Name="DomainNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Marka" Type="nvarchar" MaxLength="100" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="SeriNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IslemciTeknolojisi" Type="nvarchar" MaxLength="100" />
+          <Property Name="IslemciModeli" Type="nvarchar" MaxLength="100" />
+          <Property Name="IslemciHizi" Type="nvarchar" MaxLength="100" />
+          <Property Name="RAM" Type="nvarchar" MaxLength="50" />
+          <Property Name="SSD" Type="nvarchar" MaxLength="50" />
+          <Property Name="HDD" Type="nvarchar" MaxLength="50" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="100" />
+          <Property Name="Durum" Type="tinyint" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="BilgisayarTuru">
+          <Key>
+            <PropertyRef Name="BilgisayarTurID" />
+          </Key>
+          <Property Name="BilgisayarTurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BilgisayarTurAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeID" />
+          </Key>
+          <Property Name="BolgeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolgeAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Butce">
+          <Key>
+            <PropertyRef Name="ButceID" />
+          </Key>
+          <Property Name="ButceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ButceAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Gorev">
+          <Key>
+            <PropertyRef Name="GorevID" />
+          </Key>
+          <Property Name="GorevID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GorevAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Sifre" Type="varchar" MaxLength="50" />
+          <Property Name="AdSoyad" Type="varchar" MaxLength="50" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="MonitorID" />
+          </Key>
+          <Property Name="MonitorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersoneID" Type="int" />
+          <Property Name="BilgisayarID" Type="int" />
+          <Property Name="ButceID" Type="int" />
+          <Property Name="Marka" Type="nvarchar" MaxLength="100" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="SeriNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Boyut" Type="nvarchar" MaxLength="100" />
+          <Property Name="BagliSeriNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="100" />
+          <Property Name="Durum" Type="tinyint" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Mudurluk">
+          <Key>
+            <PropertyRef Name="MudurlukID" />
+          </Key>
+          <Property Name="MudurlukID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BolgeID" Type="int" />
+          <Property Name="MudurlukAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GorevID" Type="int" />
+          <Property Name="BolgeID" Type="int" />
+          <Property Name="MudurlukID" Type="int" />
+          <Property Name="SeflikID" Type="int" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="100" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="Seflik">
+          <Key>
+            <PropertyRef Name="SeflikID" />
+          </Key>
+          <Property Name="SeflikID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MudurlukID" Type="int" />
+          <Property Name="SeflikAd" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Yazici">
+          <Key>
+            <PropertyRef Name="YaziciID" />
+          </Key>
+          <Property Name="YaziciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonelID" Type="int" />
+          <Property Name="YaziciTurID" Type="int" />
+          <Property Name="ButceID" Type="int" />
+          <Property Name="Tip" Type="nvarchar" MaxLength="100" />
+          <Property Name="Marka" Type="nvarchar" MaxLength="100" />
+          <Property Name="Model" Type="nvarchar" MaxLength="100" />
+          <Property Name="SeriNo" Type="nvarchar" MaxLength="100" />
+          <Property Name="IP" Type="nvarchar" MaxLength="100" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="100" />
+          <Property Name="Durum" Type="tinyint" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <EntityType Name="YaziciTuru">
+          <Key>
+            <PropertyRef Name="YaziciTurID" />
+          </Key>
+          <Property Name="YaziciTurID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YaziciTurAdi" Type="nvarchar" MaxLength="100" />
+          <Property Name="AktifMi" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Bilgisayar_BilgisayarTuru">
+          <End Role="BilgisayarTuru" Type="Self.BilgisayarTuru" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BilgisayarTuru">
+              <PropertyRef Name="BilgisayarTurID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="BilgisayarTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilgisayar_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilgisayar_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Bilgisayar">
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bilgisayar">
+              <PropertyRef Name="BilgisayarID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="BilgisayarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="PersoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mudurluk_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="Mudurluk">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Gorev">
+          <End Role="Gorev" Type="Self.Gorev" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gorev">
+              <PropertyRef Name="GorevID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="GorevID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Mudurluk">
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mudurluk">
+              <PropertyRef Name="MudurlukID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="MudurlukID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Seflik">
+          <End Role="Seflik" Type="Self.Seflik" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seflik">
+              <PropertyRef Name="SeflikID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SeflikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seflik_Mudurluk">
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="0..1" />
+          <End Role="Seflik" Type="Self.Seflik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mudurluk">
+              <PropertyRef Name="MudurlukID" />
+            </Principal>
+            <Dependent Role="Seflik">
+              <PropertyRef Name="MudurlukID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_YaziciTuru">
+          <End Role="YaziciTuru" Type="Self.YaziciTuru" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YaziciTuru">
+              <PropertyRef Name="YaziciTurID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="YaziciTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OGMDatabase1Model1StoreContainer">
+          <EntitySet Name="Bilgisayar" EntityType="Self.Bilgisayar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BilgisayarTuru" EntityType="Self.BilgisayarTuru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bolge" EntityType="Self.Bolge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Butce" EntityType="Self.Butce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gorev" EntityType="Self.Gorev" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mudurluk" EntityType="Self.Mudurluk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seflik" EntityType="Self.Seflik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Yazici" EntityType="Self.Yazici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YaziciTuru" EntityType="Self.YaziciTuru" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Bilgisayar_BilgisayarTuru" Association="Self.FK_Bilgisayar_BilgisayarTuru">
+            <End Role="BilgisayarTuru" EntitySet="BilgisayarTuru" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilgisayar_Butce" Association="Self.FK_Bilgisayar_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilgisayar_Personel" Association="Self.FK_Bilgisayar_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Bilgisayar" Association="Self.FK_Monitor_Bilgisayar">
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Butce" Association="Self.FK_Monitor_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Personel" Association="Self.FK_Monitor_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mudurluk_Bolge" Association="Self.FK_Mudurluk_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Bolge" Association="Self.FK_Personel_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Gorev" Association="Self.FK_Personel_Gorev">
+            <End Role="Gorev" EntitySet="Gorev" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Mudurluk" Association="Self.FK_Personel_Mudurluk">
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Seflik" Association="Self.FK_Personel_Seflik">
+            <End Role="Seflik" EntitySet="Seflik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seflik_Mudurluk" Association="Self.FK_Seflik_Mudurluk">
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+            <End Role="Seflik" EntitySet="Seflik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_Butce" Association="Self.FK_Yazici_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_Personel" Association="Self.FK_Yazici_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_YaziciTuru" Association="Self.FK_Yazici_YaziciTuru">
+            <End Role="YaziciTuru" EntitySet="YaziciTuru" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OGMDatabase1Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bilgisayar">
+          <Key>
+            <PropertyRef Name="BilgisayarID" />
+          </Key>
+          <Property Name="BilgisayarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelID" Type="Int32" />
+          <Property Name="BilgisayarTurID" Type="Int32" />
+          <Property Name="ButceID" Type="Int32" />
+          <Property Name="DomainNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Marka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IslemciTeknolojisi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IslemciModeli" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IslemciHizi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SSD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HDD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Byte" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="BilgisayarTuru" Relationship="Self.FK_Bilgisayar_BilgisayarTuru" FromRole="Bilgisayar" ToRole="BilgisayarTuru" />
+          <NavigationProperty Name="Butce" Relationship="Self.FK_Bilgisayar_Butce" FromRole="Bilgisayar" ToRole="Butce" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Bilgisayar_Personel" FromRole="Bilgisayar" ToRole="Personel" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Monitor_Bilgisayar" FromRole="Bilgisayar" ToRole="Monitor" />
+        </EntityType>
+        <EntityType Name="BilgisayarTuru">
+          <Key>
+            <PropertyRef Name="BilgisayarTurID" />
+          </Key>
+          <Property Name="BilgisayarTurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BilgisayarTurAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Bilgisayar" Relationship="Self.FK_Bilgisayar_BilgisayarTuru" FromRole="BilgisayarTuru" ToRole="Bilgisayar" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeID" />
+          </Key>
+          <Property Name="BolgeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolgeAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Mudurluk" Relationship="Self.FK_Mudurluk_Bolge" FromRole="Bolge" ToRole="Mudurluk" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Bolge" FromRole="Bolge" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Butce">
+          <Key>
+            <PropertyRef Name="ButceID" />
+          </Key>
+          <Property Name="ButceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ButceAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Bilgisayar" Relationship="Self.FK_Bilgisayar_Butce" FromRole="Butce" ToRole="Bilgisayar" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Monitor_Butce" FromRole="Butce" ToRole="Monitor" />
+          <NavigationProperty Name="Yazici" Relationship="Self.FK_Yazici_Butce" FromRole="Butce" ToRole="Yazici" />
+        </EntityType>
+        <EntityType Name="Gorev">
+          <Key>
+            <PropertyRef Name="GorevID" />
+          </Key>
+          <Property Name="GorevID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GorevAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Gorev" FromRole="Gorev" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Kullanicilar">
+          <Key>
+            <PropertyRef Name="KullaniciID" />
+          </Key>
+          <Property Name="KullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AdSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AktifMi" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Monitor">
+          <Key>
+            <PropertyRef Name="MonitorID" />
+          </Key>
+          <Property Name="MonitorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersoneID" Type="Int32" />
+          <Property Name="BilgisayarID" Type="Int32" />
+          <Property Name="ButceID" Type="Int32" />
+          <Property Name="Marka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Boyut" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="BagliSeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Byte" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Bilgisayar" Relationship="Self.FK_Monitor_Bilgisayar" FromRole="Monitor" ToRole="Bilgisayar" />
+          <NavigationProperty Name="Butce" Relationship="Self.FK_Monitor_Butce" FromRole="Monitor" ToRole="Butce" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Monitor_Personel" FromRole="Monitor" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Mudurluk">
+          <Key>
+            <PropertyRef Name="MudurlukID" />
+          </Key>
+          <Property Name="MudurlukID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BolgeID" Type="Int32" />
+          <Property Name="MudurlukAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Bolge" Relationship="Self.FK_Mudurluk_Bolge" FromRole="Mudurluk" ToRole="Bolge" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Mudurluk" FromRole="Mudurluk" ToRole="Personel" />
+          <NavigationProperty Name="Seflik" Relationship="Self.FK_Seflik_Mudurluk" FromRole="Mudurluk" ToRole="Seflik" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelID" />
+          </Key>
+          <Property Name="PersonelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GorevID" Type="Int32" />
+          <Property Name="BolgeID" Type="Int32" />
+          <Property Name="MudurlukID" Type="Int32" />
+          <Property Name="SeflikID" Type="Int32" />
+          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Bilgisayar" Relationship="Self.FK_Bilgisayar_Personel" FromRole="Personel" ToRole="Bilgisayar" />
+          <NavigationProperty Name="Bolge" Relationship="Self.FK_Personel_Bolge" FromRole="Personel" ToRole="Bolge" />
+          <NavigationProperty Name="Gorev" Relationship="Self.FK_Personel_Gorev" FromRole="Personel" ToRole="Gorev" />
+          <NavigationProperty Name="Monitor" Relationship="Self.FK_Monitor_Personel" FromRole="Personel" ToRole="Monitor" />
+          <NavigationProperty Name="Mudurluk" Relationship="Self.FK_Personel_Mudurluk" FromRole="Personel" ToRole="Mudurluk" />
+          <NavigationProperty Name="Seflik" Relationship="Self.FK_Personel_Seflik" FromRole="Personel" ToRole="Seflik" />
+          <NavigationProperty Name="Yazici" Relationship="Self.FK_Yazici_Personel" FromRole="Personel" ToRole="Yazici" />
+        </EntityType>
+        <EntityType Name="Seflik">
+          <Key>
+            <PropertyRef Name="SeflikID" />
+          </Key>
+          <Property Name="SeflikID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MudurlukID" Type="Int32" />
+          <Property Name="SeflikAd" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Mudurluk" Relationship="Self.FK_Seflik_Mudurluk" FromRole="Seflik" ToRole="Mudurluk" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Seflik" FromRole="Seflik" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Yazici">
+          <Key>
+            <PropertyRef Name="YaziciID" />
+          </Key>
+          <Property Name="YaziciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelID" Type="Int32" />
+          <Property Name="YaziciTurID" Type="Int32" />
+          <Property Name="ButceID" Type="Int32" />
+          <Property Name="Tip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Marka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="Byte" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Butce" Relationship="Self.FK_Yazici_Butce" FromRole="Yazici" ToRole="Butce" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Yazici_Personel" FromRole="Yazici" ToRole="Personel" />
+          <NavigationProperty Name="YaziciTuru" Relationship="Self.FK_Yazici_YaziciTuru" FromRole="Yazici" ToRole="YaziciTuru" />
+        </EntityType>
+        <EntityType Name="YaziciTuru">
+          <Key>
+            <PropertyRef Name="YaziciTurID" />
+          </Key>
+          <Property Name="YaziciTurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YaziciTurAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AktifMi" Type="Boolean" />
+          <NavigationProperty Name="Yazici" Relationship="Self.FK_Yazici_YaziciTuru" FromRole="YaziciTuru" ToRole="Yazici" />
+        </EntityType>
+        <Association Name="FK_Bilgisayar_BilgisayarTuru">
+          <End Role="BilgisayarTuru" Type="Self.BilgisayarTuru" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BilgisayarTuru">
+              <PropertyRef Name="BilgisayarTurID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="BilgisayarTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilgisayar_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bilgisayar_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Bilgisayar">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Bilgisayar">
+          <End Role="Bilgisayar" Type="Self.Bilgisayar" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bilgisayar">
+              <PropertyRef Name="BilgisayarID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="BilgisayarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mudurluk_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="Mudurluk">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="BolgeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_Butce">
+          <End Role="Butce" Type="Self.Butce" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Butce">
+              <PropertyRef Name="ButceID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="ButceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Gorev">
+          <End Role="Gorev" Type="Self.Gorev" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gorev">
+              <PropertyRef Name="GorevID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="GorevID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Monitor_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Monitor" Type="Self.Monitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Monitor">
+              <PropertyRef Name="PersoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Mudurluk">
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mudurluk">
+              <PropertyRef Name="MudurlukID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="MudurlukID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seflik_Mudurluk">
+          <End Role="Mudurluk" Type="Self.Mudurluk" Multiplicity="0..1" />
+          <End Role="Seflik" Type="Self.Seflik" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mudurluk">
+              <PropertyRef Name="MudurlukID" />
+            </Principal>
+            <Dependent Role="Seflik">
+              <PropertyRef Name="MudurlukID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Seflik">
+          <End Role="Seflik" Type="Self.Seflik" Multiplicity="0..1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seflik">
+              <PropertyRef Name="SeflikID" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SeflikID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Yazici_YaziciTuru">
+          <End Role="YaziciTuru" Type="Self.YaziciTuru" Multiplicity="0..1" />
+          <End Role="Yazici" Type="Self.Yazici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YaziciTuru">
+              <PropertyRef Name="YaziciTurID" />
+            </Principal>
+            <Dependent Role="Yazici">
+              <PropertyRef Name="YaziciTurID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OGMDatabase1Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bilgisayar" EntityType="Self.Bilgisayar" />
+          <EntitySet Name="BilgisayarTuru" EntityType="Self.BilgisayarTuru" />
+          <EntitySet Name="Bolge" EntityType="Self.Bolge" />
+          <EntitySet Name="Butce" EntityType="Self.Butce" />
+          <EntitySet Name="Gorev" EntityType="Self.Gorev" />
+          <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+          <EntitySet Name="Monitor" EntityType="Self.Monitor" />
+          <EntitySet Name="Mudurluk" EntityType="Self.Mudurluk" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" />
+          <EntitySet Name="Seflik" EntityType="Self.Seflik" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Yazici" EntityType="Self.Yazici" />
+          <EntitySet Name="YaziciTuru" EntityType="Self.YaziciTuru" />
+          <AssociationSet Name="FK_Bilgisayar_BilgisayarTuru" Association="Self.FK_Bilgisayar_BilgisayarTuru">
+            <End Role="BilgisayarTuru" EntitySet="BilgisayarTuru" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilgisayar_Butce" Association="Self.FK_Bilgisayar_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bilgisayar_Personel" Association="Self.FK_Bilgisayar_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Bilgisayar" Association="Self.FK_Monitor_Bilgisayar">
+            <End Role="Bilgisayar" EntitySet="Bilgisayar" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mudurluk_Bolge" Association="Self.FK_Mudurluk_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Bolge" Association="Self.FK_Personel_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Butce" Association="Self.FK_Monitor_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_Butce" Association="Self.FK_Yazici_Butce">
+            <End Role="Butce" EntitySet="Butce" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Gorev" Association="Self.FK_Personel_Gorev">
+            <End Role="Gorev" EntitySet="Gorev" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Monitor_Personel" Association="Self.FK_Monitor_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Monitor" EntitySet="Monitor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Mudurluk" Association="Self.FK_Personel_Mudurluk">
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seflik_Mudurluk" Association="Self.FK_Seflik_Mudurluk">
+            <End Role="Mudurluk" EntitySet="Mudurluk" />
+            <End Role="Seflik" EntitySet="Seflik" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Seflik" Association="Self.FK_Personel_Seflik">
+            <End Role="Seflik" EntitySet="Seflik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_Personel" Association="Self.FK_Yazici_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Yazici_YaziciTuru" Association="Self.FK_Yazici_YaziciTuru">
+            <End Role="YaziciTuru" EntitySet="YaziciTuru" />
+            <End Role="Yazici" EntitySet="Yazici" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OGMDatabase1Model1StoreContainer" CdmEntityContainer="OGMDatabase1Entities1">
+          <EntitySetMapping Name="Bilgisayar">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Bilgisayar">
+              <MappingFragment StoreEntitySet="Bilgisayar">
+                <ScalarProperty Name="BilgisayarID" ColumnName="BilgisayarID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="BilgisayarTurID" ColumnName="BilgisayarTurID" />
+                <ScalarProperty Name="ButceID" ColumnName="ButceID" />
+                <ScalarProperty Name="DomainNo" ColumnName="DomainNo" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="IslemciTeknolojisi" ColumnName="IslemciTeknolojisi" />
+                <ScalarProperty Name="IslemciModeli" ColumnName="IslemciModeli" />
+                <ScalarProperty Name="IslemciHizi" ColumnName="IslemciHizi" />
+                <ScalarProperty Name="RAM" ColumnName="RAM" />
+                <ScalarProperty Name="SSD" ColumnName="SSD" />
+                <ScalarProperty Name="HDD" ColumnName="HDD" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BilgisayarTuru">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.BilgisayarTuru">
+              <MappingFragment StoreEntitySet="BilgisayarTuru">
+                <ScalarProperty Name="BilgisayarTurID" ColumnName="BilgisayarTurID" />
+                <ScalarProperty Name="BilgisayarTurAd" ColumnName="BilgisayarTurAd" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bolge">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Bolge">
+              <MappingFragment StoreEntitySet="Bolge">
+                <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+                <ScalarProperty Name="BolgeAd" ColumnName="BolgeAd" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Butce">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Butce">
+              <MappingFragment StoreEntitySet="Butce">
+                <ScalarProperty Name="ButceID" ColumnName="ButceID" />
+                <ScalarProperty Name="ButceAdi" ColumnName="ButceAdi" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gorev">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Gorev">
+              <MappingFragment StoreEntitySet="Gorev">
+                <ScalarProperty Name="GorevID" ColumnName="GorevID" />
+                <ScalarProperty Name="GorevAdi" ColumnName="GorevAdi" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanicilar">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Kullanicilar">
+              <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="KullaniciID" ColumnName="KullaniciID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Monitor">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Monitor">
+              <MappingFragment StoreEntitySet="Monitor">
+                <ScalarProperty Name="MonitorID" ColumnName="MonitorID" />
+                <ScalarProperty Name="PersoneID" ColumnName="PersoneID" />
+                <ScalarProperty Name="BilgisayarID" ColumnName="BilgisayarID" />
+                <ScalarProperty Name="ButceID" ColumnName="ButceID" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="Boyut" ColumnName="Boyut" />
+                <ScalarProperty Name="BagliSeriNo" ColumnName="BagliSeriNo" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mudurluk">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Mudurluk">
+              <MappingFragment StoreEntitySet="Mudurluk">
+                <ScalarProperty Name="MudurlukID" ColumnName="MudurlukID" />
+                <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+                <ScalarProperty Name="MudurlukAd" ColumnName="MudurlukAd" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="GorevID" ColumnName="GorevID" />
+                <ScalarProperty Name="BolgeID" ColumnName="BolgeID" />
+                <ScalarProperty Name="MudurlukID" ColumnName="MudurlukID" />
+                <ScalarProperty Name="SeflikID" ColumnName="SeflikID" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seflik">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Seflik">
+              <MappingFragment StoreEntitySet="Seflik">
+                <ScalarProperty Name="SeflikID" ColumnName="SeflikID" />
+                <ScalarProperty Name="MudurlukID" ColumnName="MudurlukID" />
+                <ScalarProperty Name="SeflikAd" ColumnName="SeflikAd" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Yazici">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.Yazici">
+              <MappingFragment StoreEntitySet="Yazici">
+                <ScalarProperty Name="YaziciID" ColumnName="YaziciID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
+                <ScalarProperty Name="YaziciTurID" ColumnName="YaziciTurID" />
+                <ScalarProperty Name="ButceID" ColumnName="ButceID" />
+                <ScalarProperty Name="Tip" ColumnName="Tip" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YaziciTuru">
+            <EntityTypeMapping TypeName="OGMDatabase1Model1.YaziciTuru">
+              <MappingFragment StoreEntitySet="YaziciTuru">
+                <ScalarProperty Name="YaziciTurID" ColumnName="YaziciTurID" />
+                <ScalarProperty Name="YaziciTurAdi" ColumnName="YaziciTurAdi" />
+                <ScalarProperty Name="AktifMi" ColumnName="AktifMi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
